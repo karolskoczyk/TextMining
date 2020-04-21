@@ -1,4 +1,6 @@
 #zaladowanie bibliotek
+library(proxy)
+
 #zmiana katalogu roboczego
 #workDir
 workDir <- "D:\\KS\\TextMining"
@@ -10,7 +12,7 @@ sciptsDir <- ".\\Scripts"
 #zaladowane skryptu
 sourceFile <- paste(
   sciptsDir,
-  "script2.r",
+  "frequency_matrix.r",
   sep = "\\"
 )
 source(sourceFile)

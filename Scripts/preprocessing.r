@@ -32,6 +32,10 @@ corpus <- VCorpus(
   )
 )
 
+#usuniecie z tekstow podzialu na akapity
+pasteParagraphs <- content_transformer(function(x,char) paste(x, collapse = char))
+corpus <- tm_map(corpus, pasteParagraphs, " ")
+
 #wstepne przetwarzanie
 corpus <- tm_map(corpus, removeNumbers)
 corpus <- tm_map(corpus, removePunctuation)
@@ -50,8 +54,8 @@ corpus <- tm_map(corpus, removeChar, intToUtf8(8722))
 corpus <- tm_map(corpus, removeChar, intToUtf8(190))
 
 
+#lematyzacja
 polish <- dictionary(lang="pl_PL")
-
 lemmatize <- function(text) {
   simpleText <- str_trim(as.character(text))
   parsedText <- strsplit(simpleText, split = " ")

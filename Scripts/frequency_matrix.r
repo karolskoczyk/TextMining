@@ -48,7 +48,7 @@ tdmBinAll <- TermDocumentMatrix(
   )
 )
 
-tdmTfidAll <- TermDocumentMatrix(
+tdmTfidfAll <- TermDocumentMatrix(
   corpus,
   control = list(
     weighting = weightTfIdf
@@ -90,7 +90,7 @@ dtmTfidfBounds <- DocumentTermMatrix(
 tdmTfAllMatrix <- as.matrix(tdmTfAll)
 dtmTfAllMatrix <- as.matrix(dtmTfAll)
 tdmBinAllMatrix <- as.matrix(tdmBinAll)
-tdmTfidAllMatrix <- as.matrix(tdmTfidAll)
+tdmTfidfAllMatrix <- as.matrix(tdmTfidfAll)
 tdmTfBoundsMatrix <- as.matrix(tdmTfBounds)
 tdmTfidfBoundsMatrix <- as.matrix(tdmTfidfBounds)
 dtmTfidfBoundsMatrix <- as.matrix(dtmTfidfBounds)
