@@ -21,6 +21,9 @@ source(sourceFile)
 distCos <- dist(dtmTfidfBoundsMatrix, method = "cosine")
 distCosMatrix <- as.matrix(distCos)
 mds <- cmdscale(distCos, eig = TRUE, k=2)
+
+#rysowanie wykresu w oknie aplikacji
+legend <- paste(paste("d", 1:19, sep = ""), rownames(distCosMatrix), sep = "<=")
 x <- mds$points[,1]
 y <- mds$points[,2]
 plot(
@@ -33,9 +36,10 @@ plot(
 text(
   x,
   y,
-  labels = row.names(distCosMatrix),
-  cex = .7
+  labels = paste("d", 1:19, sep = ""),
+  pos = 4
 )
+legend("bottom", legend, cex = 0.6, text.col = "orange")
 
 #eksport wykresu do pliku .png
 plotFile <- paste(
@@ -56,8 +60,8 @@ plot(
 text(
   x,
   y,
-  labels = row.names(distCosMatrix),
-  cex = .7,
+  labels = paste("d", 1:19, sep = ""),
   col = "orange"
 )
+legend("bottom", legend, cex = 0.6, text.col = "orange")
 dev.off()

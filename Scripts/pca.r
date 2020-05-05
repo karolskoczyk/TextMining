@@ -22,15 +22,17 @@ pca <- prcomp(dtmTfidfBounds)
 #wykres dokumentow w przestrzeni dwuwymiarowej
 legend <- paste(paste("d", 1:19, sep = ""), rownames(dtmTfidfBounds), sep = "<=")
 options(scipen = 5)
+x <- pca$x[,1]
+y <- pca$x[,2]
 plot(
-  pca$x[,1], 
-  pca$x[,2], 
+  x,
+  y,
   pch = 1,
   col = "orange"
   )
 text(
-  pca$x[,1], 
-  pca$x[,2], 
+  x, 
+  y, 
   paste("d", 1:19, sep = ""),
   col = "orange",
   pos = 4
@@ -46,16 +48,16 @@ plotFile <- paste(
 png(file = plotFile)
 options(scipen = 5)
 plot(
-  pca$x[,1], 
-  pca$x[,2], 
+  x, 
+  y, 
   #xlim = c(,),
   #ylim = c(,),
   pch = 1,
   col = "orange"
 )
 text(
-  pca$x[,1], 
-  pca$x[,2], 
+  x, 
+  y, 
   paste("d", 1:19, sep = ""),
   col = "orange",
   pos = 3

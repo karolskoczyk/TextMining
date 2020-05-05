@@ -84,6 +84,15 @@ dtmTfidfBounds <- DocumentTermMatrix(
   )
 )
 
+dtmTfBounds <- DocumentTermMatrix(
+  corpus,
+  control = list(
+    bounds = list(
+      global = c(2,16)
+    )
+  )
+)
+
 
 #konwersja macierzy rzadkich do macierzy klasycznych
 
@@ -94,7 +103,9 @@ tdmTfidfAllMatrix <- as.matrix(tdmTfidfAll)
 tdmTfBoundsMatrix <- as.matrix(tdmTfBounds)
 tdmTfidfBoundsMatrix <- as.matrix(tdmTfidfBounds)
 dtmTfidfBoundsMatrix <- as.matrix(dtmTfidfBounds)
+dtmTfBoundsMatrix <- as.matrix(dtmTfBounds)
 
+#eksport macierzy czestosci do pliku .csv
 matrixFile <- paste (
   outputDir,
   "tdmTfidfBounds.csv",
