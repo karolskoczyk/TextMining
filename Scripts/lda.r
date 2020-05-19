@@ -99,3 +99,4 @@ round(results$terms[,words1],2)
 words2 <- c("harry", "³ucja", "bell")
 round(results$terms[,words2],2)
 
+#podzial dokumentow na skupienia na pdst dominujacych tematyk

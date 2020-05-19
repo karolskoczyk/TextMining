@@ -37,6 +37,7 @@ text(
   x,
   y,
   labels = paste("d", 1:19, sep = ""),
+  col = "orange",
   pos = 4
 )
 legend("bottom", legend, cex = 0.6, text.col = "orange")
